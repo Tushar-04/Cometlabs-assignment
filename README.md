@@ -136,3 +136,21 @@ NOTE : This request can take upto 5 min if number of repo or stargarzers is larg
     - username : contains  username(If left blank,the authenticated user will be considered.).
     ![image](https://user-images.githubusercontent.com/75965694/175113905-531fba8e-d3e4-4115-bb8a-c7c25efeaa0a.png)
 
+<br>
+
+### 12. "http://127.0.0.1:5000/list/commits" : GET Request
+**This is an  endpoint to list all the repos of a given user with > 5 commits in last 10 days**<br>
+NOTE : This request can take upto  minute if number of repo very large
+- **params**
+    - username : contains  username(If left blank,the authenticated user will be considered.).
+    ![image](https://user-images.githubusercontent.com/75965694/175114728-9bc0518b-0954-4b99-9778-606ed694675e.png)
+
+
+<br>
+
+### 13. "http://127.0.0.1:5000/list/commits/owner" : GET Request
+**This is an  endpoint to list all the repos of a given user with > 5 commits by owner in last 10 days**<br>
+NOTE : This request can take upto  minute if number of repo very large
+- **params**
+    - username : contains  username(If left blank,the authenticated user will be considered.).
+    ![image](https://user-images.githubusercontent.com/75965694/175114906-583d6301-139a-4bfa-9ec4-85c48d0c1084.png)
