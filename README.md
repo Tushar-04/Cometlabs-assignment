@@ -64,13 +64,75 @@ py .\cometLabsApi.py
 ### 3. "http://127.0.0.1:5000/repoList" : GET Request
 **This is an endpoint that can list all repos of a user.**
 - **params**
-    - username : contains  username(If left blank, an authenticated user will be considered.).
+    - username : contains  username(If left blank,the authenticated user will be considered.).
     ![image](https://user-images.githubusercontent.com/75965694/175107739-596a29e3-1b26-447b-9947-77078e683699.png)
 
 ### 4. "http://127.0.0.1:5000/topics/list" : GET Request
 **This is an endpoint that return all topis of a given repo of a user.**
 - **params**
-    - username : contains  username(If left blank, an authenticated user will be considered.).
+    - username : contains  username(If left blank,the authenticated user will be considered.).
     - repo : contains reponame(Required).
     ![image](https://user-images.githubusercontent.com/75965694/175108601-f7255c99-5b15-409c-a0d7-1faae177efa2.png)
+<br>
+
+### 5. "http://127.0.0.1:5000/topics/update" : GET Request
+**This is an endpoint that can udate topics of a given repo of a user.**
+- **params**
+    - username : contains  username(If left blank,the  authenticated user will be considered.).
+    - repo : contains reponame(Required).
+    - topics : list of new topis in comma-space seperated lower-case string (Required)
+    ![image](https://user-images.githubusercontent.com/75965694/175109519-e4189c45-649d-4fd9-87b3-dc160504bb12.png)
+  
+<br>
+
+### 6. "http://127.0.0.1:5000/topics/delete" : GET Request
+**This is an endpoint that can delte topics of a given repo of a user.**
+- **params**
+    - username : contains  username(If left blank,the authenticated user will be considered.).
+    - repo : contains reponame(Required).
+    - topics : list of topis to be delted in comma-space seperated lower-case string (Required)
+    ![image](https://user-images.githubusercontent.com/75965694/175109896-8a8d4e01-ef61-405f-8b73-80e8cc830ad0.png)
+
+<br>
+
+### 7. "http://127.0.0.1:5000/list/contributors" : GET Request
+**This is an endpoint that can return list of all contributors of a given repo of a user.**
+- **params**
+    - username : contains  username(If left blank,the authenticated user will be considered.).
+    - repo : contains reponame(Required).
+    ![image](https://user-images.githubusercontent.com/75965694/175110778-fff2b7af-3138-4e50-872b-461bccc9b67d.png)
+<br>
+
+
+### 8. "http://127.0.0.1:5000/list/stargazers" : GET Request
+**This is an endpoint that can return list of all stargazers of a given repo of a user.**
+- **params**
+    - username : contains  username(If left blank,the authenticated user will be considered.).
+    - repo : contains reponame(Required).
+    ![image](https://user-images.githubusercontent.com/75965694/175111083-3b8ba960-dc5f-48e4-8246-7ccf7eefd1a4.png)
+
+<br>
+
+### 9. "http://127.0.0.1:5000/repoListSpecial" : GET Request
+**This is an endpoint to list all the repos of a given user with > 5 stars and > 5 forks.**
+- **params**
+    - username : contains  username(If left blank,the authenticated user will be considered.).
+    ![image](https://user-images.githubusercontent.com/75965694/175112243-93ae4b8b-211d-4aab-8ef4-5946f69adff6.png)
+<br>
+
+### 10. "http://127.0.0.1:5000/repoListSpecial" : GET Request
+**This is an endpoint to list all the stargazers who have started more than 2 repos of a given user**<br>
+NOTE : This request can take upto 5 min if number of repo or stargarzers is large
+- **params**
+    - username : contains  username(If left blank,the authenticated user will be considered.).
+    ![image](https://user-images.githubusercontent.com/75965694/175113697-ed4e71eb-dc57-44f0-b652-8758715075c1.png)
+
+<br>
+
+### 11. "http://127.0.0.1:5000/repoListSpecial2" : GET Request
+**This is an endpoint to list all the stargazers who have started exactly 2 repos of a given user**<br>
+NOTE : This request can take upto 5 min if number of repo or stargarzers is large
+- **params**
+    - username : contains  username(If left blank,the authenticated user will be considered.).
+    ![image](https://user-images.githubusercontent.com/75965694/175113905-531fba8e-d3e4-4115-bb8a-c7c25efeaa0a.png)
 
