@@ -6,11 +6,7 @@ import github
 
 
 #api tokken 
-<<<<<<< HEAD
-githubApiTokken="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"
-=======
-githubApiTokken="Enter your access tokken"
->>>>>>> a82890da59da0bc7b0b21c29805aed48f676d407
+githubApiTokken="Enter your access token"
 g = Github(login_or_token=githubApiTokken)
 app=Flask(__name__)
 
