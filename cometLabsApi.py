@@ -6,7 +6,7 @@ import github
 
 
 #api tokken 
-githubApiTokken="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"
+githubApiTokken="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"
 g = Github(login_or_token=githubApiTokken)
 app=Flask(__name__)
 
@@ -18,8 +18,8 @@ def checkTokken():
         return(jsonify({"message":"Authorized Tokken","username":user.login}))
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
-    except:
-        return(jsonify({"message":"Unknown error occurred"}))
+    except Exception as e:
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 
 
@@ -43,8 +43,8 @@ def api_createRepo():
 
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
-    except:
-        return(jsonify({"message":"Unknown error occurred"}))
+    except Exception as e:
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 
 @app.route("/repoList")
@@ -65,8 +65,8 @@ def api_repoList():
 
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
-    except:
-        return(jsonify({"message":"Unknown error occurred"}))
+    except Exception as e:
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 
 @app.route("/topics/list")
@@ -89,8 +89,8 @@ def api_topicsList():
 
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
-    except:
-        return(jsonify({"message":"Unknown error occurred"}))
+    except Exception as e:
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 @app.route("/topics/delete")
 def api_topicsDelete():
@@ -115,8 +115,8 @@ def api_topicsDelete():
 
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
-    except:
-        return(jsonify({"message":"Unknown error occurred"}))
+    except Exception as e:
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 @app.route("/topics/update")
 def api_topicsUpdate():
@@ -138,8 +138,8 @@ def api_topicsUpdate():
 
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
-    except:
-        return(jsonify({"message":"Unknown error occurred"}))
+    except Exception as e:
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 @app.route("/list/contributors")
 def api_listContributors():
@@ -159,8 +159,8 @@ def api_listContributors():
 
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
-    except:
-        return(jsonify({"message":"Unknown error occurred"}))
+    except Exception as e:
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 
 @app.route("/list/stargazers")
@@ -181,8 +181,8 @@ def api_listStargazers():
 
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
-    except:
-        return(jsonify({"message":"Unknown error occurred"}))
+    except Exception as e:
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 
 @app.route("/repoListSpecial")
@@ -205,8 +205,8 @@ def api_repoListSpecial():
 
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
-    except:
-        return(jsonify({"message":"Unknown error occurred"}))
+    except Exception as e:
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 @app.route("/list/stargazers/special")
 def api_listStargazersSpecial():
@@ -233,8 +233,8 @@ def api_listStargazersSpecial():
         
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
-    except:
-        return(jsonify({"message":"Unknown error occurred"}))
+    except Exception as e:
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 
 @app.route("/list/stargazers/special2")
@@ -262,8 +262,8 @@ def api_listStargazersSpecial2():
 
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
-    except:
-        return(jsonify({"message":"Unknown error occurred"}))
+    except Exception as e:
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 
 @app.route("/list/commits")
@@ -292,7 +292,7 @@ def api_listcommits():
 
         res={
             "username":user.login,
-            "stargazers list":repoList
+            "repoList":repoList
         }
         return jsonify(res)
 
@@ -328,14 +328,14 @@ def api_listcommitsOwner():
 
         res={
             "username":user.login,
-            "stargazers list":repoList
+            "repoList":repoList
         }
         return jsonify(res)
 
     except github.BadAttributeException as e:
         return(jsonify({"Error":e.data.get("message"),"message":"Check api tokken or username"}))
     except Exception as e:
-        return(jsonify({"message":"Unknown error occurred"+str(e)}))
+        return(jsonify({"message":"Unknown error occurred "+str(e)}))
 
 
 if __name__=="__main__":
